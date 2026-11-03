@@ -694,6 +694,8 @@ h2 .deck-tag{color:#16A34A;margin-right:4px}
 .rd-status.busy{color:var(--indigo)}
 .rd-status.busy::before{content:"";display:inline-block;width:10px;height:10px;margin-right:6px;border-radius:50%;border:2px solid var(--indigo-soft);border-top-color:var(--indigo);animation:spin .8s linear infinite;vertical-align:-1px}
 .fb-tool.ai{border-color:#C7B8F5;background:#F3EFFF;color:#6D4BD8}
+/* Từ tiếng Anh không bị cắt giữa từ: chỉ xuống dòng ở khoảng trắng, từ dài thì tự thu nhỏ chữ */
+.fb-word.en-w,.fb-bword.en-w,.sd-word.en-w,.sd-bword.en-w{word-break:normal;overflow-wrap:normal;hyphens:manual}
 .hl{background:var(--matcha-soft);color:inherit;border-radius:3px;padding:0 1px}
 </style>
 </head>
@@ -711,6 +713,8 @@ const I18N = {
     password:'Mật khẩu', passwordHint:'Tối thiểu 4 ký tự', processing:'Đang xử lý…',
     errUser:'Tên đăng nhập cần 3–20 ký tự: chữ không dấu, số hoặc dấu gạch dưới.', errPass:'Mật khẩu cần tối thiểu 4 ký tự.',
     errTaken:'Tên đăng nhập này đã có. Hãy chọn tên khác hoặc đăng nhập.', errWrong:'Sai tên đăng nhập hoặc mật khẩu.',
+    errNoUser:'Tài khoản này chưa có trên trình duyệt/thiết bị này. Tài khoản được lưu riêng ở từng nơi: hãy mở đúng trình duyệt đã tạo, hoặc bấm “Tạo tài khoản” để tạo mới tại đây.',
+    errPassWrong:'Mật khẩu chưa đúng. Lưu ý mật khẩu phân biệt chữ hoa và chữ thường.',
     loginNote:'Tài khoản và dữ liệu học được lưu riêng cho bạn trên trang này.',
     tryGuest:'Dùng thử không cần tài khoản', guestName:'Khách', orText:'hoặc',
     guestNote:'Bạn đang dùng thử, chưa có tài khoản. Tạo tài khoản để giữ thẻ và khu vườn lâu dài.',
@@ -804,6 +808,8 @@ const I18N = {
     password:'パスワード', passwordHint:'4文字以上', processing:'処理中…',
     errUser:'ユーザー名は3〜20文字の半角英数字またはアンダースコアで入力してください。', errPass:'パスワードは4文字以上で入力してください。',
     errTaken:'このユーザー名は使われています。別の名前にするか、ログインしてください。', errWrong:'ユーザー名またはパスワードが違います。',
+    errNoUser:'このアカウントはこのブラウザ／端末にはありません。アカウントは場所ごとに保存されます。作成したブラウザで開くか、「新規登録」でここに作成してください。',
+    errPassWrong:'パスワードが違います。大文字と小文字は区別されます。',
     loginNote:'アカウントと学習データは、このページにあなた専用で保存されます。',
     tryGuest:'アカウントなしで試す', guestName:'ゲスト', orText:'または',
     guestNote:'お試し中です。カードと庭を長く残すには、アカウントを作成してください。',
@@ -1351,7 +1357,8 @@ async function onAuth(e){
     }
   } else {
     const a = acc.users[u];
-    if(!a || a.hash !== await sha(a.salt+':'+p)){ btn.disabled=false; btn.textContent=label; err.textContent = t('errWrong'); return; }
+    if(!a){ btn.disabled=false; btn.textContent=label; err.textContent = t('errNoUser'); return; }
+    if(a.hash !== await sha(a.salt+':'+p)){ btn.disabled=false; btn.textContent=label; err.textContent = t('errPassWrong'); return; }
   }
   await enter(u);
 }
@@ -2110,13 +2117,13 @@ function sdDots(i, n){
 }
 /* Tự thu nhỏ chữ với từ vựng dài để vừa khung thẻ, không cần cuộn */
 function fitFaces(root){
-  (root || document).querySelectorAll('.fb-face,.sd-face').forEach(face=>{
+  (root || document).querySelectorAll('.fb-face,.sd-face,.qz-prompt').forEach(face=>{
     const els = [...face.querySelectorAll('.fb-word,.fb-bword,.sd-word,.sd-bword,.fb-read,.sd-read,.fb-mean,.sd-mean,.fb-mean2,.sd-mean2,.fb-ex,.sd-ex')];
     const word = face.querySelector('.fb-word,.fb-bword,.sd-word,.sd-bword');
     const art = face.querySelector('.fb-art');
     els.forEach(e=>{ e.style.fontSize = ''; }); if(art){ art.style.width = ''; art.style.display = ''; }
     if(!word || !face.clientHeight) return;
-    const over = () => face.scrollHeight > face.clientHeight + 1;
+    const over = () => face.scrollHeight > face.clientHeight + 1 || face.scrollWidth > face.clientWidth + 1;
     if(!over()) return;
     let size = parseFloat(getComputedStyle(word).fontSize), guard = 0;
     /* Cách đọc thu nhỏ cùng tỉ lệ, luôn nhỏ hơn từ chính */
@@ -2521,6 +2528,7 @@ function renderQ(dir=''){
       ${answered ? `<button class="sd-btn main" data-act="qz-next">${q.i===n-1 ? t('seeResult') : t('nextQ')} <span aria-hidden="true">›</span></button>` : ''}
     </div>` + qzFoot();
   if(answered){ const nb = el.querySelector('[data-act="qz-next"]'); nb && nb.focus({preventScroll:true}); }
+  fitFaces(el);
 }
 function renderResult(){
   const q = S.quiz, el = $('#quiz'); if(!q || !el) return;
