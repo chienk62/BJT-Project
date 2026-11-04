@@ -784,87 +784,6 @@ h2 .deck-tag{color:#16A34A;margin-right:4px}
 .dc-witem{display:flex;flex-direction:column;gap:4px}
 .dc-witem .m{font-size:15px;font-weight:600}
 .fb-tool.dict{border-color:#A9D8F5;background:#EAF6FE;color:#0E7FB8}
-/* ---------- Luyện nghe từ file ---------- */
-.au .sd-ic{font-size:24px}
-.au-intro{padding:18px}
-.au-list{display:grid;gap:8px;margin-top:14px;max-height:40vh;overflow:auto}
-.au-item{display:flex;align-items:center;gap:8px;border:2px solid var(--sd-line);border-radius:16px;padding:10px 12px;background:#fff}
-:root[data-theme="dark"] .au-item{background:#14243F}
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .au-item{background:#14243F}}
-.au-info{flex:1;min-width:0}
-.au-info b{display:block;color:var(--sd-navy);overflow-wrap:anywhere}
-.au-info small{color:var(--sd-muted)}
-.au-item .sd-btn{padding:8px 14px;font-size:14px}
-.au-del{color:var(--qz-ng)}
-.au-empty{text-align:center;color:var(--sd-muted);margin:16px 0}
-.au-text{min-height:150px;font-size:14.5px}
-.au-txt{font-size:13px;color:var(--muted);margin:-6px 0 12px;display:flex;gap:8px;align-items:center;flex-wrap:wrap}
-.au-fname{display:block;margin-top:6px;color:var(--sd-blue);font-weight:600}
-.au-player{display:flex;align-items:center;justify-content:center;gap:14px;flex-wrap:wrap}
-.au-pp{font-size:22px;font-weight:900}
-.au-ctl{border:2px solid var(--sd-line);background:#fff;color:var(--sd-navy);border-radius:999px;padding:9px 14px;font-weight:700;font-size:14px}
-:root[data-theme="dark"] .au-ctl{background:#14243F}
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .au-ctl{background:#14243F}}
-.au-time{font-variant-numeric:tabular-nums;font-weight:700;color:var(--sd-navy);min-width:96px;text-align:center}
-.au-track{width:100%;height:6px;border-radius:6px;background:#D7E9FA;overflow:hidden}
-.au-track i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--sd-sky),var(--sd-blue))}
-.au-cur{width:100%;background:#fff;border:2px solid var(--sd-blue);border-radius:16px;padding:10px 14px;text-align:left}
-:root[data-theme="dark"] .au-cur{background:#14243F}
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .au-cur{background:#14243F}}
-.au-cur small{color:var(--sd-blue);font-weight:800}
-.au-cur p{margin:4px 0 0;font-size:17px;font-weight:600;color:var(--sd-navy);line-height:1.5}
-.au-next{width:100%;text-align:left;color:var(--sd-muted);font-size:14px;padding:0 6px;opacity:.75}
-.dc-slow.on{background:var(--sd-soft);border-color:var(--sd-blue)}
-/* ---------- Chép theo câu (điền từ khó) ---------- */
-.dx-top{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:4px}
-.dx-top .back{margin:0}
-.dx-kicker{font-size:12.5px;font-weight:800;letter-spacing:.08em;color:var(--sd-muted)}
-.dx-title{margin:0 0 14px;font-size:22px;font-weight:800;color:var(--sd-navy)}
-.dx-title small{font-size:14px;color:var(--sd-muted);font-weight:600}
-.dx-card{background:#fff;border:1.5px solid var(--sd-line);border-radius:20px;box-shadow:0 10px 24px -20px rgba(30,60,150,.5)}
-:root[data-theme="dark"] .dx-card{background:#14243F}
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .dx-card{background:#14243F}}
-.dx-player{padding:18px 18px 12px;margin-bottom:16px}
-.dx-ctrls{display:flex;align-items:center;justify-content:center;gap:10px;flex-wrap:wrap}
-.dx-btn{display:inline-flex;align-items:center;gap:6px;height:48px;padding:0 16px;border-radius:14px;border:1.5px solid var(--sd-line);background:#fff;color:var(--sd-navy);font-weight:700;font-size:15px;white-space:nowrap}
-.dx-btn.sq{width:48px;padding:0;justify-content:center;font-size:22px}
-.dx-btn:disabled{opacity:.35;cursor:default}
-.dx-btn.on{background:var(--sd-soft);border-color:var(--sd-blue);color:var(--sd-blue)}
-:root[data-theme="dark"] .dx-btn{background:#14243F}
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .dx-btn{background:#14243F}}
-.dx-play{width:64px;height:64px;border-radius:50%;border:0;display:grid;place-items:center;font-size:24px;color:#fff;background:linear-gradient(150deg,var(--sd-sky),var(--sd-blue));box-shadow:0 12px 24px -12px var(--sd-blue)}
-.dx-play.playing{animation:spkPulse 1.2s ease-in-out infinite}
-.dx-prog{display:flex;align-items:center;gap:14px;margin-top:16px;font-size:13px;color:var(--sd-muted);font-variant-numeric:tabular-nums}
-.dx-track{position:relative;flex:1;height:8px;border-radius:8px;background:#E3EEFB;cursor:pointer}
-.dx-track i{position:absolute;left:0;top:0;bottom:0;border-radius:8px;background:linear-gradient(90deg,var(--sd-blue),#1D4FD8);width:0}
-.dx-track .ab{position:absolute;top:-4px;width:3px;height:16px;border-radius:2px;background:#F59E0B}
-.dx-ab{display:flex;align-items:center;justify-content:flex-end;gap:6px;margin-top:10px;font-size:13px;color:var(--sd-muted)}
-.dx-key{width:30px;height:30px;border-radius:8px;border:1.5px solid var(--sd-line);background:#fff;font-weight:800;font-size:13px;color:var(--sd-navy)}
-.dx-key.on{background:#FEF3C7;border-color:#F59E0B;color:#B45309}
-.dx-sent{padding:22px 22px 0}
-.dx-line{font-size:19px;line-height:2.4;color:var(--sd-navy);word-spacing:2px;padding-bottom:16px}
-.dx-w{display:inline}
-.gap-wrap{position:relative;display:inline-block}
-.gap{font:inherit;font-size:18px;color:var(--sd-blue);font-weight:700;border:0;border-bottom:2px solid #93B8F0;background:transparent;padding:0 2px;margin:0 2px;text-align:center;outline:none;min-width:3ch;border-radius:0}
-.gap:focus{border-bottom-color:var(--sd-blue);background:var(--sd-soft);border-radius:6px 6px 0 0}
-.gap.ok{color:var(--qz-ok);border-bottom-color:var(--qz-ok)}
-.gap.hint{color:#B7791F;border-bottom-color:#F6C26B}
-.gap.bad{color:var(--qz-ng);border-bottom-color:var(--qz-ng);text-decoration:line-through}
-.gap-full{width:100%;text-align:left}
-.gap-ans{position:absolute;left:50%;transform:translateX(-50%);top:100%;margin-top:-14px;font-size:12px;font-weight:800;color:var(--qz-ok);white-space:nowrap;line-height:1}
-.dx-bar{display:flex;align-items:center;gap:12px;flex-wrap:wrap;border-top:1.5px solid var(--sd-line);margin:0 -22px;padding:14px 22px}
-.dx-meter{flex:1;min-width:80px;height:7px;border-radius:7px;background:#E8EEF6;overflow:hidden}
-.dx-meter i{display:block;height:100%;background:var(--qz-ok);border-radius:7px;transition:width .3s}
-.dx-cnt{font-size:14px;color:var(--sd-muted);font-variant-numeric:tabular-nums}
-.dx-cnt b{color:var(--sd-navy)}
-.dx-hint{border:0;background:none;color:#D97706;font-weight:700;font-size:15px;padding:8px 6px}
-.dx-clear{border:0;background:none;color:var(--sd-muted);font-size:18px;padding:8px}
-.dx-submit{border:0;border-radius:14px;padding:12px 22px;background:linear-gradient(150deg,var(--sd-blue),#1D4FD8);color:#fff;font-weight:800;font-size:15px;box-shadow:0 10px 20px -12px var(--sd-blue)}
-.dx-res{margin:0 -22px;padding:12px 22px 16px;border-top:1.5px dashed var(--sd-line);font-weight:800}
-.dx-res.ok{color:var(--qz-ok)}.dx-res.bad{color:var(--qz-ng)}
-.dx-full{margin-top:6px;font-weight:600;color:var(--sd-navy);font-size:16px}
-.dx-keys{text-align:center;color:var(--sd-muted);font-size:12.5px;margin:12px 0 0}
-@media (max-width:520px){.dx-ctrls{gap:6px;flex-wrap:nowrap}.dx-btn{height:40px;padding:0 9px;font-size:13px}.dx-btn span{display:none}.dx-btn.sq{width:38px}.dx-play{width:52px;height:52px;flex:none}.dx-meter{min-width:40px}.dx-submit{padding:10px 16px}.dx-line{font-size:17px}.dx-sent{padding:16px 14px 0}.dx-bar,.dx-res{margin:0 -14px;padding-left:14px;padding-right:14px}}
 .hl{background:var(--matcha-soft);color:inherit;border-radius:3px;padding:0 1px}
 </style>
 </head>
@@ -976,21 +895,6 @@ const I18N = {
     dcEmpty:'Hãy gõ câu bạn nghe được trước khi kiểm tra.', dcNoEx:'Chưa có thẻ nào có câu ví dụ để chép chính tả.',
     dcNoVoice:'Thiết bị này chưa có giọng đọc nên chưa chép chính tả được.', dcTip:'Mẹo: bấm Enter để kiểm tra nhanh.',
     dcPerfN:'Câu đúng hoàn toàn', dcReview:'Các câu cần luyện lại',
-    auBtn:'Nghe file', auTitle:'Luyện nghe chép chính tả', auHow:'Tải file nghe (ví dụ Cambridge IELTS) và dán transcript. Ngắt câu một lần, sau đó luyện chép từng câu, có gợi ý và chấm điểm từng từ.',
-    auLessonsN:n=>n+' bài', auNew:'＋ Bài nghe mới', auEmpty:'Chưa có bài nghe nào. Tạo bài đầu tiên từ file nghe của bạn.', auSentN:n=>n+' câu',
-    auNotMarked:'Chưa ngắt câu', auBest:n=>'Tốt nhất: '+n+'%', auPractice:'Luyện', auDel:'Xóa', auDelConfirm:'Bấm lần nữa để xóa',
-    auName:'Tên bài nghe', auNamePh:'Ví dụ: Cam 18 – Test 1 – Part 2', auFile:'File nghe', auChooseFile:'Chọn file nghe',
-    auTranscript:'Transcript', auTranscriptPh:'Dán transcript của phần nghe vào đây…', auTxt:'Hoặc tải file .txt:', auCreate:'Tạo bài nghe', auBack:'‹ Danh sách bài nghe',
-    auErrFile:'Hãy chọn file nghe.', auErrText:'Hãy dán transcript của phần nghe.', auErrAudio:'Không phát được file này. Hãy dùng file .mp3 hoặc .m4a.',
-    auPickTitle:'Chọn lại file nghe', auPickHint:f=>'File nghe của bài này chưa có trên máy này (ví dụ bạn đang dùng máy khác hoặc đã xóa dữ liệu trình duyệt). Hãy chọn lại file: '+f, auCacheFail:'Máy không đủ chỗ để lưu file nghe, lần sau bạn cần chọn lại file.', auDiff:'Tên file khác lần trước, hãy chắc đây đúng là file của bài này.',
-    auMarkTitle:'Ngắt câu', auMarkHow:'Bấm ▶ để phát, rồi bấm “Ngắt” (hoặc Enter) ngay khi người nói vừa đọc xong câu đang hiện. Chỉ cần làm một lần cho mỗi bài.',
-    auNowSent:(i,n)=>'Câu '+i+' / '+n, auMark:'✂️ Ngắt – hết câu này', auUndo:'↩️ Hoàn tác', auLastToEnd:'Câu cuối kéo tới hết file',
-    auMarkDone:'Bài nghe đã ngắt câu xong. Mỗi lượt trang phát đúng một câu để bạn chép lại.', auRemark:'Ngắt câu lại', auPlay:'Phát', auPause:'Tạm dừng',
-    auBack3:'Lùi 3 giây', auSlow:'Chậm 0.75x', auListenSent:'Nghe câu này', auSkip:'Bỏ qua', auContinue:i=>'Tiếp tục từ câu '+i, auFromStart:'Bắt đầu từ câu 1',
-    auMarkTip:'Mẹo: nhấn Enter để ngắt câu nhanh.', auPracticeTip:'Mẹo: Enter để kiểm tra, ⏪ để nghe lại 3 giây.', auToList:'Về danh sách', auSaved:'Đã lưu các mốc ngắt câu.',
-    dxSent:i=>'Câu '+i, dxReplay:'Phát lại', dxRate:'Tốc độ phát', dxAutoTip:'Tự chuyển câu và phát tiếp khi điền đúng hết', dxAB:'Vòng lặp đoạn (A-B)',
-    dxBlank:i=>'Ô trống '+i, dxClear:'Xóa các ô đã gõ', dxSubmit:'Nộp', dxScore:(a,b)=>'Được '+a+' / '+b+' điểm', dxHintsUsed:n=>'dùng '+n+' gợi ý',
-    dxKeys:'Tự nộp khi điền đúng đủ · Tab gợi ý (−1 điểm/từ) · Ctrl + Enter nộp',
     tapFlip:'Chạm để xem nghĩa', flipLabel:'Lật thẻ', prev:'Trước', next:'Tiếp', restart:'Học lại từ đầu', shuffle:'Trộn thẻ', close:'Đóng'
   },
   ja:{
@@ -1094,21 +998,6 @@ const I18N = {
     dcEmpty:'聞こえた文を入力してから答え合わせしてください。', dcNoEx:'例文のあるカードがありません。',
     dcNoVoice:'この端末には読み上げ音声がないため、ディクテーションができません。', dcTip:'ヒント:Enterですぐ答え合わせ。',
     dcPerfN:'完璧な文', dcReview:'練習が必要な文',
-    auBtn:'音声ファイル', auTitle:'リスニング・ディクテーション', auHow:'音声ファイル(例:ケンブリッジIELTS)とスクリプトを用意します。最初に一度だけ文を区切れば、あとは1文ずつ書き取り練習ができます。ヒントと単語ごとの採点付き。',
-    auLessonsN:n=>n+'件', auNew:'＋ 新しい教材', auEmpty:'まだ教材がありません。音声ファイルから最初の教材を作りましょう。', auSentN:n=>n+'文',
-    auNotMarked:'未区切り', auBest:n=>'ベスト:'+n+'%', auPractice:'練習', auDel:'削除', auDelConfirm:'もう一度押すと削除',
-    auName:'教材の名前', auNamePh:'例:Cam 18 – Test 1 – Part 2', auFile:'音声ファイル', auChooseFile:'音声ファイルを選ぶ',
-    auTranscript:'スクリプト', auTranscriptPh:'リスニングのスクリプトをここに貼り付け…', auTxt:'または .txt ファイル:', auCreate:'教材を作成', auBack:'‹ 教材一覧',
-    auErrFile:'音声ファイルを選んでください。', auErrText:'スクリプトを貼り付けてください。', auErrAudio:'このファイルは再生できません。.mp3 か .m4a を使ってください。',
-    auPickTitle:'音声ファイルを選び直す', auPickHint:f=>'この端末にはこの教材の音声ファイルがありません(別の端末を使っている、またはブラウザのデータを消した場合など)。ファイルを選び直してください:'+f, auCacheFail:'空き容量が足りず音声ファイルを保存できませんでした。次回はファイルを選び直してください。', auDiff:'前回とファイル名が違います。同じ教材のファイルか確認してください。',
-    auMarkTitle:'文の区切り', auMarkHow:'▶で再生し、表示中の文を言い終わった瞬間に「区切る」(またはEnter)を押します。教材ごとに一度だけでOK。',
-    auNowSent:(i,n)=>i+' / '+n+'文目', auMark:'✂️ 区切る(この文の終わり)', auUndo:'↩️ 元に戻す', auLastToEnd:'最後の文はファイルの終わりまで',
-    auMarkDone:'文の区切りが完了しました。1文ずつ再生されるので、聞こえた通りに書き取りましょう。', auRemark:'区切り直す', auPlay:'再生', auPause:'一時停止',
-    auBack3:'3秒戻る', auSlow:'ゆっくり 0.75x', auListenSent:'この文を聞く', auSkip:'スキップ', auContinue:i=>i+'文目から続ける', auFromStart:'1文目から始める',
-    auMarkTip:'ヒント:Enterですばやく区切れます。', auPracticeTip:'ヒント:Enterで答え合わせ、⏪で3秒戻る。', auToList:'教材一覧へ', auSaved:'区切りを保存しました。',
-    dxSent:i=>i+'文目', dxReplay:'もう一度', dxRate:'再生速度', dxAutoTip:'全部正解したら次の文へ自動で進む', dxAB:'区間リピート(A-B)',
-    dxBlank:i=>'空欄'+i, dxClear:'入力を消す', dxSubmit:'提出', dxScore:(a,b)=>b+'点中'+a+'点', dxHintsUsed:n=>'ヒント'+n+'回',
-    dxKeys:'全部正解で自動提出 · Tab ヒント(1語につき−1点) · Ctrl + Enter 提出',
     tapFlip:'タップして意味を表示', flipLabel:'カードをめくる', prev:'前へ', next:'次へ', restart:'最初から', shuffle:'シャッフル', close:'閉じる'
   }
 };
@@ -1681,7 +1570,6 @@ function viewAllCards(){
     <button class="btn primary" data-act="new">${t('addFirst')}</button>
     <button class="btn" data-act="go-decks">${t('seeDecks')}</button>
     <button class="btn" data-act="xls">${t('xlsImport')}</button>
-    <button class="btn" data-act="au-open">🎧 ${t('auBtn')}</button>
     ${IMG_LIM?`<button class="btn" data-act="import">${t('importImg')}</button>`:''}</div>`;
   return `<div class="fb">${fbHead()}${fcStats()}<div class="fb-grid">${fcStage()}${fcList()}</div>${FB_CLOUDS}</div>`;
 }
@@ -1821,7 +1709,7 @@ function fcList(){
           <button class="fb-tool main" data-act="new">＋ ${t('addCard')}</button>
           <button class="fb-tool" data-act="xls">${t('xlsImport')}</button>
           ${IMG_LIM?`<button class="fb-tool" data-act="import">${t('importImg')}</button>`:''}
-          ${list.length>=2?`<button class="fb-tool" data-act="test-mine">${t('test')}</button><button class="fb-tool game" data-act="game-mine">🎮 ${t('game')}</button>`:''}${list.some(c=>c.example) ? `<button class="fb-tool dict" data-act="dict-mine">✍️ ${t('dict')}</button>` : ''}<button class="fb-tool dict" data-act="au-open">🎧 ${t('auBtn')}</button>${SAMPLE && enMissing().length ? `<button class="fb-tool ai" data-act="en-fill">${t('exFillBtn', enMissing().length)}</button>` : ''}</div>
+          ${list.length>=2?`<button class="fb-tool" data-act="test-mine">${t('test')}</button><button class="fb-tool game" data-act="game-mine">🎮 ${t('game')}</button>`:''}${list.some(c=>c.example) ? `<button class="fb-tool dict" data-act="dict-mine">✍️ ${t('dict')}</button>` : ''}${SAMPLE && enMissing().length ? `<button class="fb-tool ai" data-act="en-fill">${t('exFillBtn', enMissing().length)}</button>` : ''}</div>
       ${list.length ? (()=>{ const ids = list.map(c=>c.id), n = ids.filter(id=>S.pickSet.has(id)).length;
         return `<div class="fb-selrow${n?' active':''}">
           <label class="fb-all"><input type="checkbox" id="sel-all" aria-label="${t('selectAll')}" ${n && n===ids.length ? 'checked' : ''} data-ind="${n && n<ids.length ? 1 : 0}"><span>${n ? t('nSelected', n) : t('selectAll')}</span></label>
@@ -2115,7 +2003,7 @@ function openModal(html, opts={}){
   if(opts.dismiss !== false) m.addEventListener('click', e=>{ if(e.target===m) closeModal(); });
   const f = m.querySelector('input,textarea,button'); f && f.focus();
 }
-function closeModal(){ if(AU) auClose(); if(S.dict){ S.dict = null; try{ speechSynthesis.cancel(); }catch(_){} } if(S.enFill){ S.enFill.ctl.abort(); S.enFill = null; } if(IMP && IMP.ctl) IMP.ctl.abort(); IMP = null; DF = null; XLS = null; S.quiz = null; if(S.game){ S.game.end = true; S.game = null; } clearInterval(gmTick); $('#modal-root').innerHTML = ''; S.study = null; }
+function closeModal(){ if(S.dict){ S.dict = null; try{ speechSynthesis.cancel(); }catch(_){} } if(S.enFill){ S.enFill.ctl.abort(); S.enFill = null; } if(IMP && IMP.ctl) IMP.ctl.abort(); IMP = null; DF = null; XLS = null; S.quiz = null; if(S.game){ S.game.end = true; S.game = null; } clearInterval(gmTick); $('#modal-root').innerHTML = ''; S.study = null; }
 document.addEventListener('keydown', e=>{
   if(!$('#modal-root').innerHTML) return;
   if(e.key==='Escape') closeModal();
@@ -3211,365 +3099,6 @@ document.addEventListener('keydown', e=>{
   if(e.target.id === 'dc-in' && !it.res){ e.preventDefault(); dcCheck(); }
 });
 
-/* ===================== Luyện nghe chép chính tả từ file nghe (ví dụ Cambridge IELTS) ===================== */
-let AU = null;
-function auLessons(){ return S.data.audio || (S.data.audio = []); }
-function splitTranscript(text){
-  const ABBR = /\b(Mr|Mrs|Ms|Dr|St|Prof|etc|vs|e\.g|i\.e|No)\./g;
-  const out = [];
-  String(text || '').replace(/\r/g, '').split(/\n+/).forEach(line=>{
-    line = line.trim(); if(!line) return;
-    let speaker = '';
-    const m = line.match(/^([A-Z][A-Z .'’-]{1,24}|[A-Z][a-z]+(?: [A-Z][a-z]+)?)\s*:\s*(.+)$/);
-    if(m){ speaker = m[1].trim(); line = m[2]; }
-    line = line.replace(ABBR, '$1\u2060').replace(/(\d)\.(\d)/g, '$1\u2061$2');
-    const parts = line.match(/[^.!?。！？]+(?:[.!?。！？]+["'”’)]*|$)/g) || [line];
-    parts.map(s=>s.replace(/\u2060/g, '.').replace(/\u2061/g, '.').trim())
-      .filter(s=>/[A-Za-z0-9\u3040-\u9fff]/.test(s))
-      .forEach((s, k)=>out.push({text:s, speaker: k===0 ? speaker : ''}));
-  });
-  const merged = [];
-  out.forEach(x=>{ const wc = x.text.split(/\s+/).length;
-    if(merged.length && wc <= 2 && !x.speaker && !/[\u3040-\u9fff]/.test(x.text)) merged[merged.length-1].text += ' ' + x.text; else merged.push(x); });
-  return merged.slice(0, 300);
-}
-const auJa = s => /[\u3040-\u30ff\u3400-\u9fff]/.test(s);
-function auFmt(sec){ sec = Math.max(0, sec || 0); const m = Math.floor(sec/60), s = Math.floor(sec%60); return m + ':' + String(s).padStart(2,'0'); }
-/* Lưu file nghe ngay trên máy (IndexedDB) để không phải chọn lại mỗi lần */
-const AUDB = {
-  db:null,
-  open(){ if(this.db) return Promise.resolve(this.db);
-    return new Promise((res, rej)=>{ try{ const r = indexedDB.open('bjtniwa-audio', 1);
-      r.onupgradeneeded = ()=>r.result.createObjectStore('files');
-      r.onsuccess = ()=>{ this.db = r.result; res(this.db); }; r.onerror = ()=>rej(r.error); }catch(e){ rej(e); } }); },
-  async tx(mode, fn){ const db = await this.open(); return new Promise((res, rej)=>{ const tx = db.transaction('files', mode); const st = tx.objectStore('files'); const rq = fn(st); tx.oncomplete = ()=>res(rq && rq.result); tx.onerror = ()=>rej(tx.error); tx.onabort = ()=>rej(tx.error); }); },
-  put(id, file){ return this.tx('readwrite', st=>st.put({blob:file, name:file.name, type:file.type, size:file.size, at:Date.now()}, id)); },
-  get(id){ return this.tx('readonly', st=>st.get(id)); },
-  del(id){ return this.tx('readwrite', st=>st.delete(id)); },
-  keys(){ return this.tx('readonly', st=>st.getAllKeys()); }
-};
-async function auCache(id, file){
-  try{ if(navigator.storage && navigator.storage.persist) navigator.storage.persist().catch(()=>{});
-    await AUDB.put(id, file); if(AU){ AU.cached = AU.cached || new Set(); AU.cached.add(id); } }
-  catch(e){ toast(t('auCacheFail')); }
-}
-function openAudio(){
-  openModal(`<i class="sd-bub b1" aria-hidden="true"></i><i class="sd-bub b2" aria-hidden="true"></i><i class="sd-bub b3" aria-hidden="true"></i>
-    <div class="sheet sd qz dc au" id="au"></div>`, {cls:'sd-modal', dismiss:false});
-  AU = {mode:'list', cached:new Set()};
-  renderAu();
-  AUDB.keys().then(ks=>{ if(AU){ AU.cached = new Set(ks); if(AU.mode==='list') renderAu(); } }).catch(()=>{});
-}
-function auClose(){
-  if(!AU) return;
-  try{ if(AU.a){ AU.a.pause(); AU.a.removeAttribute('src'); AU.a.load(); } }catch(_){}
-  if(AU.url) URL.revokeObjectURL(AU.url);
-  cancelAnimationFrame(AU.raf);
-  if(AU.lesson) saveData();
-  AU = null;
-}
-function auHead(title, countText, pct){
-  return `<div class="sd-cloud">${SD_CLOUD}</div>
-    <div class="sd-head">
-      <span class="sd-ic">🎧</span>
-      <div class="sd-ht"><div class="sd-title">${esc(title)}</div><div class="sd-bar"><i style="width:${pct||0}%"></i></div></div>
-      ${countText ? `<span class="sd-count">${countText}</span>` : ''}
-    </div>`;
-}
-function auFoot(tip, extra=''){ return `<div class="sd-foot"><span>${tip}</span><span class="qz-foot-r">${extra}<button class="sd-btn" data-act="close-modal">${t('close')}</button></span></div>`; }
-function auFilePicker(id, label){
-  return `<div class="imp-pick-wrap"><span class="btn primary imp-pick" aria-hidden="true">${label}</span><input type="file" id="${id}" class="imp-file" aria-label="${esc(label)}" accept="audio/*,.mp3,.m4a,.wav,.ogg,.aac"></div>`;
-}
-/* Nạp file nghe vào trình phát (thử blob trước, không được thì dùng data URL) */
-function auLoad(file, after){
-  if(AU.url) URL.revokeObjectURL(AU.url);
-  const a = AU.a || new Audio(); AU.a = a; a.preload = 'auto';
-  let triedData = false;
-  a.onerror = ()=>{
-    if(triedData || !AU){ if(AU){ AU.err = t('auErrAudio'); renderAu(); } return; }
-    triedData = true; const fr = new FileReader(); fr.onload = ()=>{ if(AU){ a.src = fr.result; a.load(); } }; fr.readAsDataURL(file);
-  };
-  a.onloadedmetadata = ()=>{ if(AU){ AU.dur = a.duration; if(after){ const f = after; after = null; f(); } } };
-  a.onplay = a.onpause = ()=>{ if(AU) auSyncUI(); };
-  AU.file = file; AU.url = URL.createObjectURL(file); a.src = AU.url; a.load();
-}
-function auTick(){
-  if(!AU || !AU.a) return;
-  const a = AU.a;
-  if(AU.ab && AU.ab.a != null && AU.ab.b != null && a.currentTime >= AU.ab.b){ a.currentTime = AU.ab.a; }
-  else if(AU.segEnd != null && a.currentTime >= AU.segEnd){ a.pause(); AU.segEnd = null; }
-  auSyncUI();
-  if(!a.paused) AU.raf = requestAnimationFrame(auTick);
-}
-function auSyncUI(){
-  if(!AU || !AU.a) return;
-  const a = AU.a, tm = $('#au-time'); if(tm) tm.textContent = auFmt(a.currentTime) + ' / ' + auFmt(AU.dur);
-  const pb = $('#au-pp'); if(pb){ pb.classList.toggle('playing', !a.paused); pb.setAttribute('aria-label', a.paused ? t('auPlay') : t('auPause')); pb.innerHTML = a.paused ? '▶' : '❚❚'; }
-  const bar = $('#au-prog'); if(bar && AU.dur) bar.style.width = (a.currentTime/AU.dur*100) + '%';
-  if(AU.mode === 'q' && AU.lesson){ const sg = auSeg(AU.i), len = Math.max(0.01, sg.end - sg.start), rel = Math.min(len, Math.max(0, a.currentTime - sg.start));
-    const f = $('#dx-fill'); if(f) f.style.width = (rel/len*100) + '%'; const c = $('#dx-cur'); if(c) c.textContent = auFmt(rel); }
-}
-function auPlay(){ if(!AU || !AU.a) return; AU.a.play().then(()=>{ cancelAnimationFrame(AU.raf); AU.raf = requestAnimationFrame(auTick); }).catch(()=>{ AU.err = t('auErrAudio'); renderAu(); }); }
-function auSeg(i){ const L = AU.lesson; return {start: i ? L.marks[i-1] : 0, end: L.marks[i] != null ? L.marks[i] : AU.dur}; }
-function auPlaySeg(){
-  if(!AU || !AU.a) return;
-  const {start, end} = auSeg(AU.i);
-  AU.a.playbackRate = AU.rate || 1;
-  AU.a.currentTime = Math.max(0, start - 0.1); AU.segEnd = end + 0.08; auPlay();
-}
-function renderAu(){
-  const el = $('#au'); if(!AU || !el) return;
-  const err = AU.err ? `<div class="err" role="alert">${esc(AU.err)}</div>` : ''; AU.err = '';
-  const L = AU.lesson;
-  if(AU.mode === 'list'){
-    const ls = auLessons();
-    el.innerHTML = auHead(t('auTitle'), t('auLessonsN', ls.length), 0) + `
-      <div class="qz-panel au-intro"><div class="dc-demo" aria-hidden="true">🎧<i></i>✍️</div><p class="gm-how">${t('auHow')}</p></div>
-      ${ls.length ? `<div class="au-list">${[...ls].reverse().map(x=>`<div class="au-item">
-          <div class="au-info"><b>${esc(x.name)}</b><small>${AU.cached && AU.cached.has(x.id) ? '💾 ' : ''}${t('auSentN', x.sents.length)} · ${x.marks.length >= x.sents.length ? (x.best != null ? t('auBest', x.best) : '✓') : t('auNotMarked')}</small></div>
-          <button class="sd-btn main" data-act="au-open-lesson" data-id="${x.id}">${t('auPractice')}</button>
-          <button class="sd-btn au-del" data-act="au-del" data-id="${x.id}">${t('auDel')}</button></div>`).join('')}</div>`
-        : `<p class="au-empty">${t('auEmpty')}</p>`}
-      ${err}
-      <div class="sd-acts qz-acts"><button class="sd-btn main" data-act="au-new">${t('auNew')}</button></div>` + auFoot(t('auPracticeTip'));
-    return;
-  }
-  if(AU.mode === 'new'){
-    el.innerHTML = auHead(t('auNew'), '', 0) + `
-      <button class="back" data-act="au-list">${t('auBack')}</button>
-      <label class="field"><span>${t('auName')}</span><input class="input" id="au-name" maxlength="80" value="${esc(AU.draftName || '')}" placeholder="${esc(t('auNamePh'))}"></label>
-      <div class="field"><span>${t('auFile')}</span>${auFilePicker('au-file', t('auChooseFile'))}
-        ${AU.file ? `<small class="au-fname">🎵 ${esc(AU.file.name)}</small>` : ''}</div>
-      <label class="field"><span>${t('auTranscript')}</span><textarea class="input au-text" id="au-text" placeholder="${esc(t('auTranscriptPh'))}">${esc(AU.draftText || '')}</textarea></label>
-      <div class="au-txt"><span>${t('auTxt')}</span> <input type="file" id="au-txtfile" accept=".txt,text/plain"></div>
-      ${err}
-      <div class="sd-acts qz-acts"><button class="sd-btn main" data-act="au-create">${t('auCreate')} <span aria-hidden="true">›</span></button></div>` + auFoot(t('auMarkTip'));
-    $('#au-name').oninput = e=>{ AU.draftName = e.target.value; };
-    $('#au-text').oninput = e=>{ AU.draftText = e.target.value; };
-    $('#au-file').onchange = e=>{ const f = e.target.files[0]; if(!f) return; AU.file = f; if(!AU.draftName) AU.draftName = f.name.replace(/\.[^.]+$/,''); renderAu(); };
-    $('#au-txtfile').onchange = e=>{ const f = e.target.files[0]; if(!f) return; f.text().then(s=>{ if(AU){ AU.draftText = s; renderAu(); } }); };
-    return;
-  }
-  if(AU.mode === 'pick'){
-    el.innerHTML = auHead(L.name, t('auSentN', L.sents.length), 0) + `
-      <button class="back" data-act="au-list">${t('auBack')}</button>
-      <div class="qz-panel"><span class="sd-chip">${t('auPickTitle')}</span><p class="gm-how">${t('auPickHint', esc(L.fileName))}</p>${auFilePicker('au-file', t('auChooseFile'))}</div>
-      ${err}` + auFoot(t('auPracticeTip'));
-    $('#au-file').onchange = e=>{ const f = e.target.files[0]; if(!f) return;
-      if(f.name !== L.fileName) toast(t('auDiff'));
-      auCache(L.id, f);
-      auLoad(f, ()=>{ AU.mode = L.marks.length >= L.sents.length ? 'start' : 'mark'; renderAu(); }); };
-    return;
-  }
-  if(AU.mode === 'mark'){
-    const n = L.sents.length, k = L.marks.length, cur = L.sents[k], nxt = L.sents[k+1];
-    el.innerHTML = auHead(t('auMarkTitle') + ' · ' + L.name, k + ' / ' + n, k/n*100) + `
-      <div class="qz-panel au-mark">
-        <p class="gm-how">${t('auMarkHow')}</p>
-        <div class="au-player">
-          <button class="au-ctl" data-act="au-back3" aria-label="${t('auBack3')}">⏪ 3s</button>
-          <button class="dc-big au-pp" id="au-pp" data-act="au-pp" aria-label="${t('auPlay')}">▶</button>
-          <span class="au-time" id="au-time">0:00 / ${auFmt(AU.dur)}</span>
-        </div>
-        <div class="au-track"><i id="au-prog"></i></div>
-        ${cur ? `<div class="au-cur"><small>${t('auNowSent', k+1, n)}${cur.speaker ? ' · ' + esc(cur.speaker) : ''}</small><p class="${auJa(cur.text)?'jp':'en-w'}">${esc(cur.text)}</p></div>` : ''}
-        ${nxt ? `<div class="au-next ${auJa(nxt.text)?'jp':'en-w'}">${esc(nxt.text)}</div>` : ''}
-      </div>
-      ${err}
-      <div class="sd-acts qz-acts">
-        ${k ? `<button class="sd-btn" data-act="au-undo">${t('auUndo')}</button>` : ''}
-        ${k === n-1 ? `<button class="sd-btn soft" data-act="au-last">${t('auLastToEnd')}</button>` : ''}
-        <button class="sd-btn main" data-act="au-mark">${t('auMark')}</button>
-      </div>` + auFoot(t('auMarkTip'));
-    auSyncUI();
-    return;
-  }
-  if(AU.mode === 'start'){
-    const pos = L.pos || 0;
-    el.innerHTML = auHead(L.name, t('auSentN', L.sents.length), 0) + `
-      <button class="back" data-act="au-list">${t('auBack')}</button>
-      <div class="qz-panel"><div class="dc-demo" aria-hidden="true">🎧<i></i>✍️</div><p class="gm-how">${t('auMarkDone')}</p>
-        ${L.best != null ? `<span class="sd-chip">${t('auBest', L.best)}</span>` : ''}</div>
-      <div class="sd-acts qz-acts">
-        ${pos > 0 && pos < L.sents.length ? `<button class="sd-btn soft" data-act="au-go" data-id="${pos}">${t('auContinue', pos+1)}</button>` : ''}
-        <button class="sd-btn main" data-act="au-go" data-id="0">${t('auFromStart')} <span aria-hidden="true">›</span></button>
-      </div>` + auFoot(t('auPracticeTip'), `<button class="sd-btn" data-act="au-remark">${t('auRemark')}</button>`);
-    return;
-  }
-  if(AU.mode === 'q'){
-    const n = L.sents.length, s = L.sents[AU.i], g = dxState(), seg = auSeg(AU.i);
-    const nb = g.blanks.length, okN = g.blanks.filter(b=>g.ok[b.k]).length;
-    const sentHTML = g.ja
-      ? `<input class="gap gap-full jp" data-k="0" lang="ja" value="${esc(g.vals[0]||'')}" ${g.done?'readonly':''} autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" aria-label="${t('dxBlank', 1)}">`
-      : g.words.map(w=>{
-          if(w.sp) return w.text;
-          if(!w.blank) return `<span class="dx-w">${esc(w.text)}</span>`;
-          const st = g.done ? (g.ok[w.k] ? (g.hinted.has(w.k) ? ' hint' : ' ok') : ' bad') : (g.ok[w.k] ? (g.hinted.has(w.k) ? ' hint' : ' ok') : '');
-          return `<span class="dx-w">${esc(w.pre)}<span class="gap-wrap"><input class="gap${st}" data-k="${w.k}" style="width:${Math.max(3, w.core.length + 1.2)}ch" value="${esc(g.vals[w.k]||'')}" ${g.done || g.ok[w.k] ? 'readonly' : ''} autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" aria-label="${t('dxBlank', w.k+1)}">${g.done && !g.ok[w.k] ? `<small class="gap-ans">${esc(w.core)}</small>` : ''}</span>${esc(w.suf)}</span>`;
-        }).join('');
-    const r = AU.res[AU.i];
-    el.innerHTML = `
-      <div class="dx-top"><button class="back" data-act="au-list">${t('auBack')}</button><span class="dx-kicker">DICTATION · ${AU.i+1}/${n}</span></div>
-      <h3 class="dx-title">${t('dxSent', AU.i+1)}${s.speaker ? ` <small>· ${esc(s.speaker)}</small>` : ''}</h3>
-      <div class="dx-card dx-player">
-        <div class="dx-ctrls">
-          <button class="dx-btn sq" data-act="dx-prev" aria-label="${t('prev')}" ${AU.i===0?'disabled':''}>‹</button>
-          <button class="dx-btn" data-act="dx-replay">↻ <span>${t('dxReplay')}</span></button>
-          <button class="dx-play" id="au-pp" data-act="dx-pp" aria-label="${t('auPlay')}">▶</button>
-          <button class="dx-btn" data-act="dx-rate" title="${t('dxRate')}">⏲ ${AU.rate || 1}×</button>
-          <button class="dx-btn${AU.auto?' on':''}" data-act="dx-auto" aria-pressed="${!!AU.auto}" title="${t('dxAutoTip')}">⇄ <span>Auto</span></button>
-          <button class="dx-btn sq" data-act="dx-next" aria-label="${t('next')}" ${AU.i>=n-1?'disabled':''}>›</button>
-        </div>
-        <div class="dx-prog"><span id="dx-cur">0:00</span><div class="dx-track" id="dx-track"><i id="dx-fill"></i>${AU.ab && AU.ab.a!=null ? `<b class="ab a" style="left:${(AU.ab.a-seg.start)/(seg.end-seg.start)*100}%"></b>` : ''}${AU.ab && AU.ab.b!=null ? `<b class="ab b" style="left:${(AU.ab.b-seg.start)/(seg.end-seg.start)*100}%"></b>` : ''}</div><span>${auFmt(seg.end-seg.start)}</span></div>
-        <div class="dx-ab"><button class="dx-key${AU.ab && AU.ab.a!=null?' on':''}" data-act="dx-a">A</button><button class="dx-key${AU.ab && AU.ab.b!=null?' on':''}" data-act="dx-b">B</button><span>⇄ ${t('dxAB')}</span></div>
-      </div>
-      <div class="dx-card dx-sent">
-        <div class="dx-line ${g.ja?'jp':'en-w'}">${sentHTML}</div>
-        <div class="dx-bar">
-          <div class="dx-meter"><i style="width:${nb?okN/nb*100:0}%"></i></div><span class="dx-cnt"><b>${okN}</b> / ${nb}</span>
-          ${g.done ? '' : `<button class="dx-hint" data-act="dx-hint">💡 ${t('dcHint')}</button><button class="dx-clear" data-act="dx-clear" aria-label="${t('dxClear')}" title="${t('dxClear')}">⌫</button><button class="dx-submit" data-act="dx-submit">✓ ${t('dxSubmit')}</button>`}
-          ${g.done ? `<button class="dx-submit" data-act="dx-next-or-end">${AU.i===n-1 ? t('seeResult') : t('nextQ')} ›</button>` : ''}
-        </div>
-        ${g.done && r ? `<div class="dx-res ${r.score===r.total?'ok':'bad'}">${r.score===r.total ? t('dcPerfect') : t('dxScore', r.score, r.total)}${r.hints ? ` · ${t('dxHintsUsed', r.hints)}` : ''}<div class="dx-full ${g.ja?'jp':'en-w'}">${esc(s.text)}</div></div>` : ''}
-      </div>
-      <p class="dx-keys">${t('dxKeys')}</p>`;
-    el.querySelectorAll('input.gap').forEach(inp=>{
-      inp.oninput = ()=>dxInput(inp);
-      inp.onkeydown = e=>{
-        if(e.key === 'Tab'){ e.preventDefault(); dxHint(); }
-        else if(e.key === 'Enter' && (e.ctrlKey || e.metaKey)){ e.preventDefault(); dxSubmit(); }
-        else if(e.key === 'Enter' && !e.isComposing){ e.preventDefault(); dxFocusNext(+inp.dataset.k); }
-      };
-    });
-    const tr = $('#dx-track'); if(tr) tr.onclick = e=>{ const rc = tr.getBoundingClientRect(); const p = (e.clientX - rc.left)/rc.width; AU.a.currentTime = seg.start + p*(seg.end-seg.start); AU.segEnd = seg.end + 0.08; auPlay(); };
-    auSyncUI();
-    if(!g.done){ const first = el.querySelector('input.gap:not([readonly])'); first && first.focus({preventScroll:true}); }
-    else { const nx = el.querySelector('[data-act="dx-next-or-end"]'); nx && nx.focus({preventScroll:true}); }
-    return;
-  }
-  if(AU.mode === 'result'){
-    const vals = Object.values(AU.res), tot = vals.reduce((a,r)=>a+r.total,0), sc = vals.reduce((a,r)=>a+r.score,0);
-    const avg = tot ? Math.round(sc/tot*100) : 0, perfect = vals.filter(r=>r.score===r.total).length;
-    const C = 2*Math.PI*52, msg = avg >= 90 ? t('resGreat') : avg >= 60 ? t('resGood') : t('resTry');
-    const weak = Object.entries(AU.res).filter(([,r])=>r.score < r.total);
-    el.innerHTML = auHead(L.name, t('result'), 100) + `
-      <div class="qz-panel qz-res">
-        <div class="qz-ring"><svg viewBox="0 0 120 120" aria-hidden="true"><circle cx="60" cy="60" r="52" class="tr"/><circle cx="60" cy="60" r="52" class="pr" stroke-dasharray="${C*avg/100} ${C}" transform="rotate(-90 60 60)"/></svg><div><b>${avg}</b><small>%</small></div></div>
-        <p class="qz-msg">${msg}</p>
-        <div class="qz-tally"><span class="ok">✓ ${t('dcPerfN')}: ${perfect}/${vals.length}</span><span class="bad">${t('dxScore', sc, tot)}</span></div>
-      </div>
-      ${weak.length ? `<p class="qz-wl">${t('dcReview')}</p><div class="qz-wrong">${weak.map(([i])=>{ const s = L.sents[i]; return `<div class="qz-witem dc-witem"><span class="m ${auJa(s.text)?'jp':'en-w'}">${esc(s.text)}</span><small>${t('dxSent', +i+1)}</small></div>`; }).join('')}</div>` : ''}
-      <div class="sd-acts qz-acts"><button class="sd-btn" data-act="au-list">${t('auToList')}</button><button class="sd-btn main" data-act="au-go" data-id="0">${t('playAgain')} <span aria-hidden="true">›</span></button></div>` + auFoot(t('auPracticeTip'));
-  }
-}
-function auCreate(){
-  const name = (AU.draftName || '').trim() || (AU.file ? AU.file.name.replace(/\.[^.]+$/,'') : '');
-  if(!AU.file){ AU.err = t('auErrFile'); renderAu(); return; }
-  const sents = splitTranscript(AU.draftText);
-  if(!sents.length){ AU.err = t('auErrText'); renderAu(); return; }
-  const L = {id:uid(), name: name.slice(0,80), text: String(AU.draftText).slice(0, 60000), sents, marks:[], fileName:AU.file.name, fileSize:AU.file.size, at:Date.now()};
-  auLessons().push(L); saveData(); auCache(L.id, AU.file);
-  AU.lesson = L;
-  auLoad(AU.file, ()=>{ AU.mode = 'mark'; renderAu(); });
-}
-function auMark(){
-  const L = AU.lesson, a = AU.a; if(!L || !a) return;
-  const tNow = Math.round(a.currentTime*100)/100;
-  if(L.marks.length && tNow <= L.marks[L.marks.length-1]) return;
-  L.marks.push(tNow);
-  if(L.marks.length >= L.sents.length){ a.pause(); saveData(); AU.mode = 'start'; toast(t('auSaved')); }
-  renderAu();
-}
-function auStart(i){
-  AU.i = +i || 0; AU.res = {}; AU.gap = null; AU.ab = null; AU.mode = 'q';
-  if(AU.rate == null) AU.rate = 1; if(AU.auto == null) AU.auto = true;
-  if(AU.a) AU.a.pause(); renderAu(); setTimeout(()=>{ if(AU && AU.mode==='q') auPlaySeg(); }, 300);
-}
-/* ---------- Chép theo câu: điền những từ khó ---------- */
-const DX_STOP = new Set('the a an and or but of to in on at for with from by as is are was were be been being it its this that these those there their they them he she his her him we our you your i me my mine yours have has had do does did not no so if then than too very can could will would should shall may might must just also into onto over under about after before again more most some any all each other such only own same both few many much what which who whom whose when where why how here up down out off once well yes oh okay ok'.split(' '));
-function dxBuild(text){
-  const ja = auJa(text);
-  if(ja) return {ja:true, words:[], blanks:[{k:0, core:text}]};
-  const parts = text.split(/(\s+)/), words = [];
-  parts.forEach(p=>{
-    if(!p) return;
-    if(/^\s+$/.test(p)){ words.push({sp:true, text:' '}); return; }
-    const m = p.match(/^([^A-Za-z0-9\u00C0-\u024F]*)(.*?)([^A-Za-z0-9\u00C0-\u024F']*)$/);
-    words.push({text:p, pre:m[1], core:m[2], suf:m[3]});
-  });
-  const real = words.filter(w=>!w.sp && w.core);
-  const cands = real.map((w, idx)=>({w, idx, score: w.core.replace(/'/g,'').length + (/\d/.test(w.core) ? 4 : 0) + (idx>0 && /^[A-Z]/.test(w.core) ? 2 : 0)}))
-    .filter(c=>c.w.core.replace(/'/g,'').length >= 4 && !DX_STOP.has(c.w.core.toLowerCase()) || /\d/.test(c.w.core));
-  let n = Math.max(1, Math.min(4, Math.round(real.length/5)));
-  let chosen = cands.sort((a,b)=>b.score-a.score || a.idx-b.idx).slice(0, n);
-  if(!chosen.length && real.length) chosen = [{w: real.reduce((a,b)=>b.core.length>a.core.length?b:a)}];
-  const set = new Set(chosen.map(c=>c.w));
-  let k = 0; words.forEach(w=>{ if(set.has(w)){ w.blank = true; w.k = k++; } });
-  return {ja:false, words, blanks: words.filter(w=>w.blank)};
-}
-const dxNorm = s => String(s||'').toLowerCase().replace(/[’‘`]/g,"'").replace(/[^a-z0-9'\u00C0-\u024F\u3040-\u30FF\u3400-\u9FFF]/g,'');
-function dxState(){
-  if(!AU.gap || AU.gap.i !== AU.i){
-    const b = dxBuild(AU.lesson.sents[AU.i].text);
-    AU.gap = {i:AU.i, ...b, vals:{}, ok:{}, hinted:new Set(), done:false};
-  }
-  return AU.gap;
-}
-function dxAnswer(k){ const g = AU.gap; return g.ja ? g.blanks[0].core : g.blanks.find(b=>b.k===k).core; }
-function dxRefreshBar(){
-  const g = AU.gap, el = $('#au'); if(!el) return;
-  const nb = g.blanks.length, okN = g.blanks.filter(b=>g.ok[b.k]).length;
-  const f = el.querySelector('.dx-meter i'); if(f) f.style.width = (nb ? okN/nb*100 : 0) + '%';
-  const c = el.querySelector('.dx-cnt b'); if(c) c.textContent = okN;
-}
-function dxInput(inp){
-  const g = AU.gap, k = +inp.dataset.k; g.vals[k] = inp.value;
-  const good = g.ja ? dcTokens(inp.value, true).join('') === dcTokens(dxAnswer(k), true).join('') : dxNorm(inp.value) === dxNorm(dxAnswer(k));
-  if(good && !g.ok[k]){ g.ok[k] = true; inp.classList.add('ok'); inp.readOnly = true; dxRefreshBar();
-    if(g.blanks.every(b=>g.ok[b.k])) dxSubmit(); else dxFocusNext(k); }
-}
-function dxFocusNext(k){
-  const el = $('#au'); if(!el) return;
-  const ins = [...el.querySelectorAll('input.gap')];
-  const nx = ins.find(x=>+x.dataset.k > k && !x.readOnly) || ins.find(x=>!x.readOnly);
-  nx && nx.focus();
-}
-function dxHint(){
-  const g = AU.gap; if(!g || g.done) return;
-  const b = g.blanks.find(x=>!g.ok[x.k]); if(!b) return;
-  g.vals[b.k] = b.core; g.ok[b.k] = true; g.hinted.add(b.k);
-  if(g.blanks.every(x=>g.ok[x.k])) dxSubmit(); else renderAu();
-}
-function dxSubmit(){
-  const g = AU.gap; if(!g || g.done) return;
-  const el = $('#au'); if(el) el.querySelectorAll('input.gap').forEach(inp=>{ const k = +inp.dataset.k; if(!g.ok[k]) g.vals[k] = inp.value; });
-  if(g.ja){ const a = dcTokens(dxAnswer(0), true), got = dcTokens(g.vals[0]||'', true); if(lcsMark(a, got).ok === a.length) g.ok[0] = true; }
-  else g.blanks.forEach(b=>{ if(dxNorm(g.vals[b.k]) === dxNorm(b.core)) g.ok[b.k] = true; });
-  g.done = true;
-  const total = g.blanks.length, okN = g.blanks.filter(b=>g.ok[b.k]).length, hints = g.hinted.size;
-  AU.res[AU.i] = {score: Math.max(0, okN - hints), total, hints, ok:okN};
-  renderAu();
-  if(AU.auto && okN === total){ setTimeout(()=>{ if(AU && AU.mode==='q' && AU.gap && AU.gap.done && AU.gap.i === AU.i) dxGo(1, true); }, 1200); }
-}
-function dxGo(d, auto){
-  const L = AU.lesson, n = L.sents.length;
-  if(d > 0 && AU.i >= n-1){ dxEnd(); return; }
-  AU.i = Math.max(0, Math.min(n-1, AU.i + d)); L.pos = AU.i; AU.ab = null;
-  if(AU.a) AU.a.pause();
-  renderAu();
-  setTimeout(()=>{ if(AU && AU.mode==='q') auPlaySeg(); }, 300);
-}
-function dxEnd(){
-  const L = AU.lesson, vals = Object.values(AU.res);
-  const tot = vals.reduce((a,r)=>a+r.total,0), sc = vals.reduce((a,r)=>a+r.score,0);
-  const avg = tot ? Math.round(sc/tot*100) : 0;
-  L.best = Math.max(L.best || 0, avg); L.pos = 0; saveData(); AU.mode = 'result'; if(AU.a) AU.a.pause(); renderAu();
-}
-document.addEventListener('keydown', e=>{
-  if(!AU || e.key !== 'Enter' || e.shiftKey || e.isComposing) return;
-  if(AU.mode === 'mark' && !/INPUT|TEXTAREA|BUTTON/.test(document.activeElement.tagName)){ e.preventDefault(); auMark(); }
-});
-
 /* ===================== Sự kiện ===================== */
 
 function confirmTap(btn, label, fn){
@@ -3641,40 +3170,6 @@ document.addEventListener('click', e=>{
     case 'df-all': if(DF){ dfVisible().forEach(c=>DF.sel.add(c.id)); renderDfList(); } break;
     case 'df-none': if(DF){ dfVisible().forEach(c=>DF.sel.delete(c.id)); renderDfList(); } break;
     case 'test-mine': { const l = fcList_(); startQuiz(l.length>=2 ? l : S.data.cards, ()=>t('tabCards'), null, {icon:'cards'}); break; }
-    case 'au-open': openAudio(); break;
-    case 'au-list': if(AU){ if(AU.a) AU.a.pause(); AU.mode = 'list'; AU.lesson = null; renderAu(); } break;
-    case 'au-new': if(AU){ AU.mode = 'new'; AU.file = null; AU.draftName = ''; AU.draftText = ''; renderAu(); } break;
-    case 'au-create': if(AU) auCreate(); break;
-    case 'au-open-lesson': if(AU){ const L = AU.lesson = auLessons().find(x=>x.id===id); if(!L) break;
-      AUDB.get(L.id).then(rec=>{ if(!AU || AU.lesson !== L) return;
-        if(rec && rec.blob){ const f = rec.blob instanceof File ? rec.blob : new File([rec.blob], rec.name || L.fileName, {type: rec.type || 'audio/mpeg'});
-          auLoad(f, ()=>{ AU.mode = L.marks.length >= L.sents.length ? 'start' : 'mark'; renderAu(); }); }
-        else { AU.mode = 'pick'; renderAu(); } }).catch(()=>{ if(AU){ AU.mode = 'pick'; renderAu(); } }); } break;
-    case 'au-del': confirmTap(b, t('auDelConfirm'), ()=>{ S.data.audio = auLessons().filter(x=>x.id!==id); AUDB.del(id).catch(()=>{}); if(AU && AU.cached) AU.cached.delete(id); saveData(); renderAu(); }); break;
-    case 'au-pp': if(AU && AU.a){ AU.segEnd = null; if(AU.a.paused) auPlay(); else AU.a.pause(); } break;
-    case 'au-back3': if(AU && AU.a){ const st = AU.mode==='q' ? auSeg(AU.i).start : 0; AU.a.currentTime = Math.max(st, AU.a.currentTime - 3); if(AU.mode==='q' && AU.segEnd==null) AU.segEnd = auSeg(AU.i).end + 0.08; auPlay(); } break;
-    case 'au-mark': if(AU) auMark(); break;
-    case 'au-undo': if(AU && AU.lesson.marks.length){ const v = AU.lesson.marks.pop(); if(AU.a){ AU.a.currentTime = Math.max(0, (AU.lesson.marks[AU.lesson.marks.length-1] || 0)); } renderAu(); } break;
-    case 'au-last': if(AU && AU.a){ AU.lesson.marks.push(Math.round((AU.dur || AU.a.duration)*100)/100); AU.a.pause(); saveData(); AU.mode = 'start'; toast(t('auSaved')); renderAu(); } break;
-    case 'au-remark': if(AU){ AU.lesson.marks = []; AU.lesson.pos = 0; if(AU.a) AU.a.currentTime = 0; AU.mode = 'mark'; saveData(); renderAu(); } break;
-    case 'au-go': if(AU) auStart(id); break;
-    case 'dx-prev': if(AU) dxGo(-1); break;
-    case 'dx-next': if(AU) dxGo(1); break;
-    case 'dx-next-or-end': if(AU) dxGo(1); break;
-    case 'dx-replay': if(AU){ AU.ab = AU.ab && AU.ab.b != null ? AU.ab : null; auPlaySeg(); } break;
-    case 'dx-pp': if(AU && AU.a){ const sg = auSeg(AU.i);
-      if(AU.a.paused){ if(AU.a.currentTime < sg.start - 0.2 || AU.a.currentTime >= sg.end - 0.05) auPlaySeg(); else { AU.segEnd = sg.end + 0.08; AU.a.playbackRate = AU.rate || 1; auPlay(); } }
-      else AU.a.pause(); } break;
-    case 'dx-rate': if(AU){ const rs = [1, 0.75, 0.5, 1.25]; AU.rate = rs[(rs.indexOf(AU.rate || 1) + 1) % rs.length]; if(AU.a) AU.a.playbackRate = AU.rate; b.textContent = '⏲ ' + AU.rate + '×'; } break;
-    case 'dx-auto': if(AU){ AU.auto = !AU.auto; b.classList.toggle('on', AU.auto); b.setAttribute('aria-pressed', AU.auto); } break;
-    case 'dx-a': if(AU && AU.a){ const sg = auSeg(AU.i); if(AU.ab && AU.ab.a != null){ AU.ab = null; } else { AU.ab = {a: Math.max(sg.start, Math.min(sg.end, AU.a.currentTime)), b:null}; } renderAu(); } break;
-    case 'dx-b': if(AU && AU.a){ const sg = auSeg(AU.i);
-      if(AU.ab && AU.ab.b != null){ AU.ab.b = null; }
-      else { const a0 = AU.ab && AU.ab.a != null ? AU.ab.a : sg.start; const bt = Math.min(sg.end, AU.a.currentTime); if(bt > a0 + 0.2){ AU.ab = {a:a0, b:bt}; AU.a.currentTime = a0; AU.segEnd = null; auPlay(); } }
-      renderAu(); } break;
-    case 'dx-hint': if(AU) dxHint(); break;
-    case 'dx-clear': if(AU && AU.gap && !AU.gap.done){ const g = AU.gap; g.blanks.forEach(x=>{ if(!g.hinted.has(x.k)){ g.vals[x.k] = ''; g.ok[x.k] = false; } }); renderAu(); } break;
-    case 'dx-submit': if(AU) dxSubmit(); break;
     case 'dict-mine': startDict(fcList_(), ()=>t('tabCards'), {icon:'cards'}); break;
     case 'dict-deck': { const d = PRESETS.find(x=>x.id===S.deck); if(d) startDict(d.cards, ()=>L(d.name), {jp:d.jp, icon:d.id}); break; }
     case 'deck-dict': { const d = decksOf().find(x=>x.id===id); if(d) startDict(deckCards(d), ()=>d.name, {icon:'layers'}); break; }
