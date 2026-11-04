@@ -701,9 +701,9 @@ h2 .deck-tag{color:#16A34A;margin-right:4px}
 .deck b,.deck span{overflow-wrap:anywhere;word-break:break-word}
 .section-head h2{min-width:0;overflow-wrap:anywhere;word-break:break-word}
 /* Hàng chọn tất cả: nằm riêng ngay trên danh sách thẻ, thẳng hàng với ô tích của từng thẻ */
-.fb-selrow{display:flex;align-items:center;gap:8px;min-height:44px;padding:6px 12px 6px 0;border-top:1.5px solid var(--fb-line);border-bottom:1.5px solid var(--fb-line);background:var(--fb-card)}
+.fb-selrow{display:flex;flex-wrap:wrap;align-items:center;gap:8px;row-gap:8px;min-height:44px;padding:8px 12px 8px 18px;border-top:1.5px solid var(--fb-line);border-bottom:1.5px solid var(--fb-line);background:var(--fb-card)}
 .fb-selrow.active{background:var(--fb-soft)}
-.fb-selrow .fb-all{width:auto;height:auto;border:0;border-radius:0;justify-content:flex-start;gap:10px;padding-left:18px;margin-right:auto;font-weight:700;font-size:14px;color:var(--fb-navy)}
+.fb-selrow .fb-all{width:auto;height:auto;border:0;border-radius:0;justify-content:flex-start;gap:10px;padding-left:0;margin-right:auto;font-weight:700;font-size:14px;color:var(--fb-navy)}
 .fb-selrow .fb-all input{margin:0}
 .fb-selrow .btn,.fb-selrow .fb-tool{white-space:nowrap;padding:6px 11px;font-size:13px}
 .fb-selrow .fb-all span{white-space:nowrap}
