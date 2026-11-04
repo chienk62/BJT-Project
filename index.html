@@ -784,6 +784,22 @@ h2 .deck-tag{color:#16A34A;margin-right:4px}
 .dc-witem{display:flex;flex-direction:column;gap:4px}
 .dc-witem .m{font-size:15px;font-weight:600}
 .fb-tool.dict{border-color:#A9D8F5;background:#EAF6FE;color:#0E7FB8}
+/* Thẻ lật vừa màn hình ở mức zoom 100%: luôn thấy được các nút Lặp lại / Đã nhớ / Chưa nhớ */
+@media (min-width:641px){
+  .fb-card{height:clamp(280px,44vh,370px)}
+  .fb-face{padding:34px 22px 20px}
+  .fb-art{width:min(160px,40%);margin-bottom:10px}
+  .fb-art .jp{font-size:clamp(56px,8vw,88px)}
+  .fb-word{font-size:clamp(30px,4.2vw,46px)}
+  .fb-read{font-size:19px}
+  .fb-speak{width:48px;height:48px}
+  .fb-acts{margin-top:18px}
+  .fb-btn{padding:12px 24px;font-size:17px}
+  .fb-nav{width:52px;height:52px}
+  .fb-stage{padding-bottom:112px;min-height:0}
+  .fb-cat{width:104px}
+  .fb-plane{width:96px}
+}
 .hl{background:var(--matcha-soft);color:inherit;border-radius:3px;padding:0 1px}
 </style>
 </head>
