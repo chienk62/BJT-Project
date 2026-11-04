@@ -982,7 +982,7 @@ const I18N = {
     auName:'Tên bài nghe', auNamePh:'Ví dụ: Cam 18 – Test 1 – Part 2', auFile:'File nghe', auChooseFile:'Chọn file nghe',
     auTranscript:'Transcript', auTranscriptPh:'Dán transcript của phần nghe vào đây…', auTxt:'Hoặc tải file .txt:', auCreate:'Tạo bài nghe', auBack:'‹ Danh sách bài nghe',
     auErrFile:'Hãy chọn file nghe.', auErrText:'Hãy dán transcript của phần nghe.', auErrAudio:'Không phát được file này. Hãy dùng file .mp3 hoặc .m4a.',
-    auPickTitle:'Chọn lại file nghe', auPickHint:f=>'File nghe không được lưu trong trình duyệt. Hãy chọn lại file của bài này: '+f, auDiff:'Tên file khác lần trước, hãy chắc đây đúng là file của bài này.',
+    auPickTitle:'Chọn lại file nghe', auPickHint:f=>'File nghe của bài này chưa có trên máy này (ví dụ bạn đang dùng máy khác hoặc đã xóa dữ liệu trình duyệt). Hãy chọn lại file: '+f, auCacheFail:'Máy không đủ chỗ để lưu file nghe, lần sau bạn cần chọn lại file.', auDiff:'Tên file khác lần trước, hãy chắc đây đúng là file của bài này.',
     auMarkTitle:'Ngắt câu', auMarkHow:'Bấm ▶ để phát, rồi bấm “Ngắt” (hoặc Enter) ngay khi người nói vừa đọc xong câu đang hiện. Chỉ cần làm một lần cho mỗi bài.',
     auNowSent:(i,n)=>'Câu '+i+' / '+n, auMark:'✂️ Ngắt – hết câu này', auUndo:'↩️ Hoàn tác', auLastToEnd:'Câu cuối kéo tới hết file',
     auMarkDone:'Bài nghe đã ngắt câu xong. Mỗi lượt trang phát đúng một câu để bạn chép lại.', auRemark:'Ngắt câu lại', auPlay:'Phát', auPause:'Tạm dừng',
@@ -1100,7 +1100,7 @@ const I18N = {
     auName:'教材の名前', auNamePh:'例:Cam 18 – Test 1 – Part 2', auFile:'音声ファイル', auChooseFile:'音声ファイルを選ぶ',
     auTranscript:'スクリプト', auTranscriptPh:'リスニングのスクリプトをここに貼り付け…', auTxt:'または .txt ファイル:', auCreate:'教材を作成', auBack:'‹ 教材一覧',
     auErrFile:'音声ファイルを選んでください。', auErrText:'スクリプトを貼り付けてください。', auErrAudio:'このファイルは再生できません。.mp3 か .m4a を使ってください。',
-    auPickTitle:'音声ファイルを選び直す', auPickHint:f=>'音声ファイルはブラウザに保存されません。この教材のファイルを選んでください:'+f, auDiff:'前回とファイル名が違います。同じ教材のファイルか確認してください。',
+    auPickTitle:'音声ファイルを選び直す', auPickHint:f=>'この端末にはこの教材の音声ファイルがありません(別の端末を使っている、またはブラウザのデータを消した場合など)。ファイルを選び直してください:'+f, auCacheFail:'空き容量が足りず音声ファイルを保存できませんでした。次回はファイルを選び直してください。', auDiff:'前回とファイル名が違います。同じ教材のファイルか確認してください。',
     auMarkTitle:'文の区切り', auMarkHow:'▶で再生し、表示中の文を言い終わった瞬間に「区切る」(またはEnter)を押します。教材ごとに一度だけでOK。',
     auNowSent:(i,n)=>i+' / '+n+'文目', auMark:'✂️ 区切る(この文の終わり)', auUndo:'↩️ 元に戻す', auLastToEnd:'最後の文はファイルの終わりまで',
     auMarkDone:'文の区切りが完了しました。1文ずつ再生されるので、聞こえた通りに書き取りましょう。', auRemark:'区切り直す', auPlay:'再生', auPause:'一時停止',
@@ -3235,11 +3235,30 @@ function splitTranscript(text){
 }
 const auJa = s => /[\u3040-\u30ff\u3400-\u9fff]/.test(s);
 function auFmt(sec){ sec = Math.max(0, sec || 0); const m = Math.floor(sec/60), s = Math.floor(sec%60); return m + ':' + String(s).padStart(2,'0'); }
+/* Lưu file nghe ngay trên máy (IndexedDB) để không phải chọn lại mỗi lần */
+const AUDB = {
+  db:null,
+  open(){ if(this.db) return Promise.resolve(this.db);
+    return new Promise((res, rej)=>{ try{ const r = indexedDB.open('bjtniwa-audio', 1);
+      r.onupgradeneeded = ()=>r.result.createObjectStore('files');
+      r.onsuccess = ()=>{ this.db = r.result; res(this.db); }; r.onerror = ()=>rej(r.error); }catch(e){ rej(e); } }); },
+  async tx(mode, fn){ const db = await this.open(); return new Promise((res, rej)=>{ const tx = db.transaction('files', mode); const st = tx.objectStore('files'); const rq = fn(st); tx.oncomplete = ()=>res(rq && rq.result); tx.onerror = ()=>rej(tx.error); tx.onabort = ()=>rej(tx.error); }); },
+  put(id, file){ return this.tx('readwrite', st=>st.put({blob:file, name:file.name, type:file.type, size:file.size, at:Date.now()}, id)); },
+  get(id){ return this.tx('readonly', st=>st.get(id)); },
+  del(id){ return this.tx('readwrite', st=>st.delete(id)); },
+  keys(){ return this.tx('readonly', st=>st.getAllKeys()); }
+};
+async function auCache(id, file){
+  try{ if(navigator.storage && navigator.storage.persist) navigator.storage.persist().catch(()=>{});
+    await AUDB.put(id, file); if(AU){ AU.cached = AU.cached || new Set(); AU.cached.add(id); } }
+  catch(e){ toast(t('auCacheFail')); }
+}
 function openAudio(){
   openModal(`<i class="sd-bub b1" aria-hidden="true"></i><i class="sd-bub b2" aria-hidden="true"></i><i class="sd-bub b3" aria-hidden="true"></i>
     <div class="sheet sd qz dc au" id="au"></div>`, {cls:'sd-modal', dismiss:false});
-  AU = {mode:'list'};
+  AU = {mode:'list', cached:new Set()};
   renderAu();
+  AUDB.keys().then(ks=>{ if(AU){ AU.cached = new Set(ks); if(AU.mode==='list') renderAu(); } }).catch(()=>{});
 }
 function auClose(){
   if(!AU) return;
@@ -3307,7 +3326,7 @@ function renderAu(){
     el.innerHTML = auHead(t('auTitle'), t('auLessonsN', ls.length), 0) + `
       <div class="qz-panel au-intro"><div class="dc-demo" aria-hidden="true">🎧<i></i>✍️</div><p class="gm-how">${t('auHow')}</p></div>
       ${ls.length ? `<div class="au-list">${[...ls].reverse().map(x=>`<div class="au-item">
-          <div class="au-info"><b>${esc(x.name)}</b><small>${t('auSentN', x.sents.length)} · ${x.marks.length >= x.sents.length ? (x.best != null ? t('auBest', x.best) : '✓') : t('auNotMarked')}</small></div>
+          <div class="au-info"><b>${esc(x.name)}</b><small>${AU.cached && AU.cached.has(x.id) ? '💾 ' : ''}${t('auSentN', x.sents.length)} · ${x.marks.length >= x.sents.length ? (x.best != null ? t('auBest', x.best) : '✓') : t('auNotMarked')}</small></div>
           <button class="sd-btn main" data-act="au-open-lesson" data-id="${x.id}">${t('auPractice')}</button>
           <button class="sd-btn au-del" data-act="au-del" data-id="${x.id}">${t('auDel')}</button></div>`).join('')}</div>`
         : `<p class="au-empty">${t('auEmpty')}</p>`}
@@ -3338,6 +3357,7 @@ function renderAu(){
       ${err}` + auFoot(t('auPracticeTip'));
     $('#au-file').onchange = e=>{ const f = e.target.files[0]; if(!f) return;
       if(f.name !== L.fileName) toast(t('auDiff'));
+      auCache(L.id, f);
       auLoad(f, ()=>{ AU.mode = L.marks.length >= L.sents.length ? 'start' : 'mark'; renderAu(); }); };
     return;
   }
@@ -3448,7 +3468,7 @@ function auCreate(){
   const sents = splitTranscript(AU.draftText);
   if(!sents.length){ AU.err = t('auErrText'); renderAu(); return; }
   const L = {id:uid(), name: name.slice(0,80), text: String(AU.draftText).slice(0, 60000), sents, marks:[], fileName:AU.file.name, fileSize:AU.file.size, at:Date.now()};
-  auLessons().push(L); saveData();
+  auLessons().push(L); saveData(); auCache(L.id, AU.file);
   AU.lesson = L;
   auLoad(AU.file, ()=>{ AU.mode = 'mark'; renderAu(); });
 }
@@ -3625,8 +3645,12 @@ document.addEventListener('click', e=>{
     case 'au-list': if(AU){ if(AU.a) AU.a.pause(); AU.mode = 'list'; AU.lesson = null; renderAu(); } break;
     case 'au-new': if(AU){ AU.mode = 'new'; AU.file = null; AU.draftName = ''; AU.draftText = ''; renderAu(); } break;
     case 'au-create': if(AU) auCreate(); break;
-    case 'au-open-lesson': if(AU){ AU.lesson = auLessons().find(x=>x.id===id); if(AU.lesson){ AU.mode = 'pick'; renderAu(); } } break;
-    case 'au-del': confirmTap(b, t('auDelConfirm'), ()=>{ S.data.audio = auLessons().filter(x=>x.id!==id); saveData(); renderAu(); }); break;
+    case 'au-open-lesson': if(AU){ const L = AU.lesson = auLessons().find(x=>x.id===id); if(!L) break;
+      AUDB.get(L.id).then(rec=>{ if(!AU || AU.lesson !== L) return;
+        if(rec && rec.blob){ const f = rec.blob instanceof File ? rec.blob : new File([rec.blob], rec.name || L.fileName, {type: rec.type || 'audio/mpeg'});
+          auLoad(f, ()=>{ AU.mode = L.marks.length >= L.sents.length ? 'start' : 'mark'; renderAu(); }); }
+        else { AU.mode = 'pick'; renderAu(); } }).catch(()=>{ if(AU){ AU.mode = 'pick'; renderAu(); } }); } break;
+    case 'au-del': confirmTap(b, t('auDelConfirm'), ()=>{ S.data.audio = auLessons().filter(x=>x.id!==id); AUDB.del(id).catch(()=>{}); if(AU && AU.cached) AU.cached.delete(id); saveData(); renderAu(); }); break;
     case 'au-pp': if(AU && AU.a){ AU.segEnd = null; if(AU.a.paused) auPlay(); else AU.a.pause(); } break;
     case 'au-back3': if(AU && AU.a){ const st = AU.mode==='q' ? auSeg(AU.i).start : 0; AU.a.currentTime = Math.max(st, AU.a.currentTime - 3); if(AU.mode==='q' && AU.segEnd==null) AU.segEnd = auSeg(AU.i).end + 0.08; auPlay(); } break;
     case 'au-mark': if(AU) auMark(); break;
